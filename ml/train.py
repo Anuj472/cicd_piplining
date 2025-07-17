@@ -14,6 +14,7 @@ model = LogisticRegression()
 model.fit(X_train, y_train)
 
 joblib.dump(model, "models/model.pkl")
+print("Model trained and saved to models/model.pkl")
 
 mlflow.log_param("model", "logistic_regression")
 mlflow.log_artifact("models/model.pkl")
