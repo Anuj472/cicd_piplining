@@ -1,0 +1,35 @@
+name: CI/CD
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        sudo apt install -y dvc
+
+    - name: Run tests
+      run: pytest tests/
+
+    - name: Train model
+      run: python ml/train.py
+
+    - name: Evaluate model
+      run: python ml/evaluate.py
+
+    - name: Build Docker image
+      run: docker build -t iris-api .
+
+    - name: Deploy (simulate or use ssh/docker-compose)
+      run: echo "Deploying app..."

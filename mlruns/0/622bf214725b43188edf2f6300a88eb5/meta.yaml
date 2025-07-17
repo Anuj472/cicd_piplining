@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/anujm/Desktop/data_piplining/mlruns/0/622bf214725b43188edf2f6300a88eb5/artifacts
+end_time: 1752781624758
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 622bf214725b43188edf2f6300a88eb5
+run_name: able-stag-433
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752781624574
+status: 3
+tags: []
+user_id: anujm
